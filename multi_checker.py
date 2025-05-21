@@ -13,7 +13,7 @@ async def get_debank_balance(page, address: str) -> str:
 
 async def main():
     total = 0
-    with open("adresses.txt", "r") as f:
+    with open("addresses.txt", "r") as f:
         addresses = [line.strip() for line in f if line.strip()]
 
     async with async_playwright() as p:
