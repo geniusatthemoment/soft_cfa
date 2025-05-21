@@ -8,7 +8,7 @@ async def get_debank_balance(page, address: str) -> str:
     await page.wait_for_selector('.HeaderInfo_totalAssetInner__HyrdC')
     await asyncio.sleep(2)
     element = await page.query_selector('.HeaderInfo_totalAssetInner__HyrdC')
-    text = await element.inner_text() if element else "Не найдено"
+    text = await element.inner_text() if element else "Element not found"
     return text.strip()
 
 async def main():
